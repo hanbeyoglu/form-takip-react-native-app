@@ -1,0 +1,11 @@
+services:
+  form-takip-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: form-takip-api
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    ports:
+      - '3010:3010'
